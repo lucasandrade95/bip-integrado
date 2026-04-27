@@ -1,6 +1,6 @@
 # Backend — Spring Boot 3.2.5 / Java 17
 
-API REST do desafio fullstack integrado. Expõe CRUD de benefícios e endpoint de transferência de valor entre eles. Esta é a única raiz Maven do projeto: o `pom.xml` aqui também compila os fontes Jakarta EE em `../ejb-module/src/main/java` via `build-helper-maven-plugin`.
+API REST. Expõe CRUD de benefícios e endpoint de transferência de valor entre eles. Esta é a única raiz Maven do projeto: o `pom.xml` aqui também compila os fontes Jakarta EE em `../ejb-module/src/main/java` via `build-helper-maven-plugin`.
 
 ## Pré-requisitos
 
