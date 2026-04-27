@@ -1,0 +1,4 @@
+com/example/backend/beneficio/BeneficioServiceTest.class
+com/example/backend/beneficio/TransferConcurrencyIT.class
+com/example/backend/beneficio/BeneficioServiceTest$RecordingEjbService.class
+com/example/backend/beneficio/BeneficioControllerIT.class

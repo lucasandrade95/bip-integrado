@@ -1,0 +1,53 @@
+<section class="card">
+  <h2>Transferência</h2>
+  <p class="hint">Para cada lado, preencha <strong>ID</strong> <em>ou</em> <strong>Nome</strong> (se preencher os dois, o nome é ignorado).</p>
+
+  <form (ngSubmit)="submit()" class="form-grid">
+    <fieldset class="side">
+      <legend>Origem</legend>
+      <label>
+        ID
+        <input type="number" name="fromId" [(ngModel)]="fromId" placeholder="ex.: 1" />
+      </label>
+      <span class="or">ou</span>
+      <label>
+        Nome
+        <input type="text" name="fromName" [(ngModel)]="fromName" list="beneficios-nomes" placeholder="ex.: Beneficio A" />
+      </label>
+    </fieldset>
+
+    <fieldset class="side">
+      <legend>Destino</legend>
+      <label>
+        ID
+        <input type="number" name="toId" [(ngModel)]="toId" placeholder="ex.: 2" />
+      </label>
+      <span class="or">ou</span>
+      <label>
+        Nome
+        <input type="text" name="toName" [(ngModel)]="toName" list="beneficios-nomes" placeholder="ex.: Beneficio B" />
+      </label>
+    </fieldset>
+
+    <label class="amount">
+      Valor
+      <input type="text"
+             name="amount"
+             [(ngModel)]="amount"
+             mask="separator.2"
+             thousandSeparator="."
+             decimalMarker=","
+             prefix="R$ "
+             placeholder="R$ 0,00"
+             required />
+    </label>
+
+    <div class="actions">
+      <button type="submit" [disabled]="!canSubmit()">Transferir</button>
+    </div>
+  </form>
+
+  <datalist id="beneficios-nomes">
+    <option *ngFor="let nome of nameOptions" [value]="nome"></option>
+  </datalist>
+</section>

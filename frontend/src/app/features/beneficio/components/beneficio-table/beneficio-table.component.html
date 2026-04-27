@@ -1,0 +1,29 @@
+<section class="card">
+  <h2>Lista</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Ativo</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of beneficios; trackBy: trackById">
+        <td>{{ b.id }}</td>
+        <td>{{ b.nome }}</td>
+        <td>{{ b.valor | number:'1.2-2' }}</td>
+        <td>{{ b.ativo ? 'sim' : 'não' }}</td>
+        <td class="row-actions">
+          <button (click)="editRequested.emit(b)">Editar</button>
+          <button class="danger" (click)="deleteRequested.emit(b)">Excluir</button>
+        </td>
+      </tr>
+      <tr *ngIf="beneficios.length === 0">
+        <td colspan="5" class="empty">Nenhum benefício cadastrado.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

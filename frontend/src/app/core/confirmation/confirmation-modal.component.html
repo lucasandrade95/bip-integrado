@@ -1,0 +1,10 @@
+<div *ngIf="confirmation.value() as p" class="modal-backdrop" (click)="confirmation.cancel()">
+  <div class="modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.message }}</p>
+    <div class="modal-actions">
+      <button type="button" class="secondary" (click)="confirmation.cancel()">Cancelar</button>
+      <button type="button" [class.danger]="p.danger" (click)="confirmation.confirm()">{{ p.confirmLabel }}</button>
+    </div>
+  </div>
+</div>

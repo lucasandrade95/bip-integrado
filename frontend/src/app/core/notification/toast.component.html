@@ -1,0 +1,9 @@
+<div *ngIf="notifications.value() as t"
+     class="toast"
+     [class.success]="t.kind === 'success'"
+     [class.error]="t.kind === 'error'"
+     role="status">
+  <span class="icon">{{ t.kind === 'success' ? '✓' : '!' }}</span>
+  <span class="text">{{ t.text }}</span>
+  <button class="close" type="button" (click)="notifications.dismiss()" aria-label="Fechar">×</button>
+</div>

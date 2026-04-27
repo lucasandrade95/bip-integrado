@@ -1,0 +1,18 @@
+<h1>Benefícios</h1>
+
+<app-beneficio-form
+  [editing]="editing()"
+  (save)="onSave($event)"
+  (cancel)="onCancel()">
+</app-beneficio-form>
+
+<app-beneficio-table
+  [beneficios]="beneficios()"
+  (editRequested)="onEditRequested($event)"
+  (deleteRequested)="onDeleteRequested($event)">
+</app-beneficio-table>
+
+<app-transfer-form
+  [nameOptions]="nameOptions()"
+  (transferRequested)="onTransferRequested($event)">
+</app-transfer-form>

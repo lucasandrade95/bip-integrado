@@ -1,0 +1,33 @@
+<section class="card">
+  <h2>{{ isEdit ? 'Editar' : 'Novo' }} benefício</h2>
+  <form (ngSubmit)="submit()" #f="ngForm" class="form-grid">
+    <label>
+      Nome
+      <input name="nome" [(ngModel)]="form.nome" required />
+    </label>
+    <label>
+      Descrição
+      <input name="descricao" [(ngModel)]="form.descricao" />
+    </label>
+    <label>
+      Valor
+      <input type="text"
+             name="valor"
+             [(ngModel)]="form.valor"
+             mask="separator.2"
+             thousandSeparator="."
+             decimalMarker=","
+             prefix="R$ "
+             placeholder="R$ 0,00"
+             required />
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="ativo" [(ngModel)]="form.ativo" />
+      Ativo
+    </label>
+    <div class="actions">
+      <button type="submit" [disabled]="f.invalid">Salvar</button>
+      <button type="button" *ngIf="isEdit" (click)="doCancel()">Cancelar</button>
+    </div>
+  </form>
+</section>
